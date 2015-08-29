@@ -57,19 +57,7 @@ chisq.prob <- 1 - pchisq(eelModel.1$null.deviance - eelModel.1$deviance, eelMode
 # in the fit of the model, chi-sq(1) = 9.93, p = .002.
 #
 # If we examine the coefficients for model 1, we see that Intervention is a 
-# significant predictor of being cured, b = 1.23, z = 3.07, p = .002
-#
-# Calculating the various R values for this model (model 1)
-# 
-# First, the standard R
-# sqrt((z^2 - 2*degFreedom)/null deviance)
-print(sqrt((3.074^2-(2*1))/154.08))   # this is pulling data from the summary display
-#
-# but let's do it directly from the model. First we extract the z-statistic to make
-# it a little easier to deal with then we compute R
-eelModel.1.z <- coef(summary(eelModel.1))[-1, 3]
-eelModel.1.R <- sqrt((eelModel.1.z^2 - 2*(eelModel.1$df.null - eelModel.1$df.residual))/eelModel.1$null.deviance)
-# 0.22
+
 #
 # R^2 L (Hosmer & Lemeshow) is chi-square / -2LL(baseline)
 eelModel.1.R2L <- eelModel.1.chisq / eelModel.1$null.deviance   # .0644
