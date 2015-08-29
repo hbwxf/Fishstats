@@ -6,6 +6,8 @@
 #
 ############################################################################
 #
+sdsfwewwew
+ewewewew
 # Eel fun, using the eel.dat data set from http://www.sagepub.com/dsur/study/default.htm
 #
 setwd("~/Documents/R/logistic regression")
@@ -176,11 +178,7 @@ exp(confint(penaltyModel.1))
 #
 # Move on to add PSWQ to the model 
 penaltyModel.2 <- glm(Scored ~ Previous + PSWQ, data = penaltyData, family = binomial(link = "logit"))
-summary(penaltyModel.2)
-#
-# b(Previous) = 0.0648, p = .0034
-# b(PSWQ) = -0.23009, p = .00395
-penaltyModel.2.chisq <- penaltyModel.1$deviance - penaltyModel.2$deviance
+
 penaltyModel.2.chisqProbability <- pchisq(penaltyModel.2.chisq, penaltyModel.1$df.residual - penaltyModel.2$df.residual)
 # chi squared = 12.51, p = .999
 penaltyModel.2.z <- coef(summary(penaltyModel.2))[-1, 3]
